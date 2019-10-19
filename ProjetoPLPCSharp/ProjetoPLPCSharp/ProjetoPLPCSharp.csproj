@@ -52,8 +52,11 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Layers\DataBases\FacBanco.cs" />
     <Compile Include="Layers\DataBases\IBanco.cs" />
     <Compile Include="Layers\DataBases\SQLserver.cs" />
+    <Compile Include="Layers\Repos\IDocente.cs" />
+    <Compile Include="Layers\Repos\RepoDocente.cs" />
     <Compile Include="Models\AtivModel.cs" />
     <Compile Include="Models\DocModel.cs" />
     <Compile Include="Program.cs" />
@@ -82,7 +85,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Layers\Controllers\" />
-    <Folder Include="Layers\Repos\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
