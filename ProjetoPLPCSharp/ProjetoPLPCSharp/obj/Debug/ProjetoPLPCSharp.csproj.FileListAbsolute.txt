@@ -1,0 +1,8 @@
+C:\Users\jpcab\OneDrive\GitHub\ProjetoPLPCsharp\ProjetoPLPCSharp\ProjetoPLPCSharp\bin\Debug\ProjetoPLPCSharp.exe.config
+C:\Users\jpcab\OneDrive\GitHub\ProjetoPLPCsharp\ProjetoPLPCSharp\ProjetoPLPCSharp\bin\Debug\ProjetoPLPCSharp.exe
+C:\Users\jpcab\OneDrive\GitHub\ProjetoPLPCsharp\ProjetoPLPCSharp\ProjetoPLPCSharp\bin\Debug\ProjetoPLPCSharp.pdb
+C:\Users\jpcab\OneDrive\GitHub\ProjetoPLPCsharp\ProjetoPLPCSharp\ProjetoPLPCSharp\obj\Debug\ProjetoPLPCSharp.csprojAssemblyReference.cache
+C:\Users\jpcab\OneDrive\GitHub\ProjetoPLPCsharp\ProjetoPLPCSharp\ProjetoPLPCSharp\obj\Debug\ProjetoPLPCSharp.Properties.Resources.resources
+C:\Users\jpcab\OneDrive\GitHub\ProjetoPLPCsharp\ProjetoPLPCSharp\ProjetoPLPCSharp\obj\Debug\ProjetoPLPCSharp.csproj.GenerateResource.cache
+C:\Users\jpcab\OneDrive\GitHub\ProjetoPLPCsharp\ProjetoPLPCSharp\ProjetoPLPCSharp\obj\Debug\ProjetoPLPCSharp.exe
+C:\Users\jpcab\OneDrive\GitHub\ProjetoPLPCsharp\ProjetoPLPCSharp\ProjetoPLPCSharp\obj\Debug\ProjetoPLPCSharp.pdb
