@@ -51,7 +51,7 @@ namespace ProjetoPLPCSharp.Layers.Repos
                 throw ex;
             }
         }
-        public List<DocModel> select(DocModel p_obj)
+        public List<DocModel> Select(DocModel p_obj)
         {
             List<DocModel> retorno;
             try

@@ -52,6 +52,7 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Layers\Controllers\DocenteController.cs" />
     <Compile Include="Layers\DataBases\FacBanco.cs" />
     <Compile Include="Layers\DataBases\IBanco.cs" />
     <Compile Include="Layers\DataBases\SQLserver.cs" />
@@ -83,8 +84,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Layers\Controllers\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
