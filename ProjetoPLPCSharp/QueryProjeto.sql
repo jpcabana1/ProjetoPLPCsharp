@@ -16,9 +16,17 @@
 
 --insert into tbAtividade(descricao, pontucao,status,CodProf) values('Tradução de Livro', 4, 'PEDENTE',2)
 
+--update tbDocente set Nome = 'Wagner', Cargo = 'Professor Auxiliar III', Titulo = 'Mestre', TempoXP = 4, Usuario = 'ww', Senha = '123' where id = 1002
+
 select * from tbAtividade --where CodProf = 2
 
 select * from tbDocente
 
+--delete from tbDocente where id = 2
+
+--delete from tbAtividade where CodProf = 2
 
 
+
+--alter table tbDocente
+--add Constraint Usuario UNIQUE(Usuario)
