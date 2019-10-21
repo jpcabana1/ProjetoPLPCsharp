@@ -7,10 +7,10 @@ namespace ProjetoPLPCSharp.Layers.DataBases
     class SQLserver : IBanco
     {
        private string SqlData = "";       
-       private string DataSource = "'localhost';";
-       private string InitialCatalog = "'PRODOC';";
-       private string User = "'sa';";
-       private string Password = "'otis2016';";       
+       private string DataSource = "Data Source = 'localhost';";
+       private string InitialCatalog = "Initial Catalog = 'PRODOC';";
+       private string User = "User = 'sa';";
+       private string Password = "Password = 'otis2016';";       
        private SqlConnection Connection;
        private SqlCommand comando;
        private SqlDataAdapter Adapter;

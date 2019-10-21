@@ -24,6 +24,7 @@ namespace ProjetoPLPCSharp.Layers.Repos
                     "TempoXP, " +
                     "Usuario," +
                     " Cargo, " +
+                    " UserStatus, "+
                     "Senha) " +
                     "values (" +
                      "'" + p_obj.Nome + "'," +
@@ -31,6 +32,7 @@ namespace ProjetoPLPCSharp.Layers.Repos
                       "" + p_obj.TempoXP + "," +
                       "'" + p_obj.Usuario + "'," +
                       "'" + p_obj.Cargo + "'," +
+                      "'" + p_obj.UserStatus + "', " +
                       "'" + p_obj.Senha + "')";
                 objDados.ExecutaComando(Comando);
             }
@@ -65,18 +67,18 @@ namespace ProjetoPLPCSharp.Layers.Repos
 
                 if(p_obj.Usuario != "")
                 {
-                    if (Comando.IndexOf("where") != 0)
+                    if (Comando.IndexOf("where") == -1)
                     {
-                        Comando = Comando + " where Usuario '" + p_obj.Usuario +"' " ;
+                        Comando = Comando + " where Usuario =  '" + p_obj.Usuario +"' " ;
                     }else{
                         Comando = Comando + " and Usuario = '" + p_obj.Usuario + "' ";
                     }
                 }
                 if (p_obj.Senha != "")
                 {
-                    if (Comando.IndexOf("where") != 0)
+                    if (Comando.IndexOf("where") == -1)
                     {
-                        Comando = Comando + " where Senha '" + p_obj.Senha + "' ";
+                        Comando = Comando + " where Senha =  '" + p_obj.Senha + "' ";
                     }
                     else
                     {
@@ -111,14 +113,15 @@ namespace ProjetoPLPCSharp.Layers.Repos
             try
             {
                 Comando = "update tbDocente " +
-                    "set " +
-                    "Nome = '" + p_obj.Nome + "' " +
-                    "Titulo = '" + p_obj.Titulo + "' " +
-                    "TempoXP = " + p_obj.TempoXP + " " +
-                    "Senha = '" + p_obj.Usuario + "' " +
-                    "Cargo = '" + p_obj.Cargo + "' " +
-                    "Senha = '" + p_obj.Senha +"' " +
-                    "where id = "+ p_obj.Id;
+                    " set " +
+                    " Nome = '" + p_obj.Nome + "', " +
+                    " Titulo = '" + p_obj.Titulo + "', " +
+                    " TempoXP = " + p_obj.TempoXP + ", " +
+                    " Senha = '" + p_obj.Usuario + "', " +
+                    " Cargo = '" + p_obj.Cargo + "', " +
+                    " Senha = '" + p_obj.Senha +"', " +
+                    " UserStatus = '" + p_obj.UserStatus + "' " +
+                    " where id = " + p_obj.Id;
             }
             catch (Exception ex)
             { 
@@ -142,6 +145,7 @@ namespace ProjetoPLPCSharp.Layers.Repos
                     objAux.TempoXP = Convert.ToInt32(data.Tables[0].Rows[i]["TempoXP"]);
                     objAux.Titulo = data.Tables[0].Rows[i]["Titulo"].ToString();
                     objAux.Usuario = data.Tables[0].Rows[i]["Usuario"].ToString();
+                    objAux.UserStatus = data.Tables[0].Rows[i]["UserStatus"].ToString();
                     retorno.Add(objAux);
                     objAux = null;
                 }

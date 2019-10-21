@@ -15,6 +15,7 @@ namespace ProjetoPLPCSharp.Models
         public string Usuario { get; set; }
         public string Cargo { get; set; }
         public string Senha { get; set; }
+        public string UserStatus { get; set; }
         public DocModel()
         {
             Id = 0;
@@ -24,6 +25,7 @@ namespace ProjetoPLPCSharp.Models
             Usuario = "";
             Cargo = "";
             Senha = "";
+            UserStatus = "";
         }
     }
 }

@@ -67,9 +67,9 @@ namespace ProjetoPLPCSharp.Layers.Repos
 
                 if (p_obj.CodProf != 0)
                 {
-                    if (Comando.IndexOf("where") != 0)
+                    if (Comando.IndexOf("where") == -1)
                     {
-                        Comando = Comando + " where CodProf '" + p_obj.CodProf + "' ";
+                        Comando = Comando + " where CodProf = '" + p_obj.CodProf + "' ";
                     }
                     else
                     {
@@ -78,9 +78,9 @@ namespace ProjetoPLPCSharp.Layers.Repos
                 }
                 if (p_obj.Status != "")
                 {
-                    if (Comando.IndexOf("where") != 0)
+                    if (Comando.IndexOf("where") == -1)
                     {
-                        Comando = Comando + " where Status '" + p_obj.Status + "' ";
+                        Comando = Comando + " where Status = '" + p_obj.Status + "' ";
                     }
                     else
                     {

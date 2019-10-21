@@ -6,3 +6,5 @@ C:\Users\jpcab\OneDrive\GitHub\ProjetoPLPCsharp\ProjetoPLPCSharp\ProjetoPLPCShar
 C:\Users\jpcab\OneDrive\GitHub\ProjetoPLPCsharp\ProjetoPLPCSharp\ProjetoPLPCSharp\obj\Debug\ProjetoPLPCSharp.csproj.GenerateResource.cache
 C:\Users\jpcab\OneDrive\GitHub\ProjetoPLPCsharp\ProjetoPLPCSharp\ProjetoPLPCSharp\obj\Debug\ProjetoPLPCSharp.exe
 C:\Users\jpcab\OneDrive\GitHub\ProjetoPLPCsharp\ProjetoPLPCSharp\ProjetoPLPCSharp\obj\Debug\ProjetoPLPCSharp.pdb
+C:\Users\jpcab\OneDrive\GitHub\ProjetoPLPCsharp\ProjetoPLPCSharp\ProjetoPLPCSharp\obj\Debug\ProjetoPLPCSharp.Form1.resources
+C:\Users\jpcab\OneDrive\GitHub\ProjetoPLPCsharp\ProjetoPLPCSharp\ProjetoPLPCSharp\obj\Debug\ProjetoPLPCSharp.Layers.Views.DocenteView.resources
