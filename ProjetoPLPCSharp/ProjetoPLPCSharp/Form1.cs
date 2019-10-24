@@ -43,7 +43,8 @@ namespace ProjetoPLPCSharp
                 if (objLogin.UserStatus == "DOC")
                 {
                     Visible = false;
-                    tela1 = new DocenteView();
+                    tela1 = new DocenteView(objLogin);
+                    
                     tela1.ShowDialog();
                     tela1 = null;
                     Visible = true;
@@ -53,10 +54,9 @@ namespace ProjetoPLPCSharp
 
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-
-                throw ex;
+                MessageBox.Show("Usuário ou senha incorretos");
             }
         }
         

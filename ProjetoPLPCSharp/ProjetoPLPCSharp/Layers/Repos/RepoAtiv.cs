@@ -18,7 +18,7 @@ namespace ProjetoPLPCSharp.Layers.Repos
         {
             this.objDados = new FacBanco().CriarBanco(tipoDados);
         }
-
+            
         public void insert(AtivModel p_obj)
         {
             try
@@ -85,6 +85,17 @@ namespace ProjetoPLPCSharp.Layers.Repos
                     else
                     {
                         Comando = Comando + " and Status = '" + p_obj.Status + "' ";
+                    }
+                }
+                if (p_obj.Pontuacao != 0)
+                {
+                    if (Comando.IndexOf("where") == -1)
+                    {
+                        Comando = Comando + " where Pontuacao = '" + p_obj.Pontuacao + "' ";
+                    }
+                    else
+                    {
+                        Comando = Comando + " and Pontuacao = '" + p_obj.Pontuacao + "' ";
                     }
                 }
                 retorno = MontaRetorno(objDados.ExecutaSelect(Comando));
@@ -154,6 +165,48 @@ namespace ProjetoPLPCSharp.Layers.Repos
             }
         }
 
+       public void testeSQLite(string Comand)
+        {
+            IBanco SQLiteBanco;
+            try
+            {
+                SQLiteBanco = new FacBanco().CriarBanco("SQLite");               
+                foreach (AtivModel item in MontaRetornoSQLite(SQLiteBanco.ExecutaSelect(Comand)))
+                {
+                    Console.WriteLine(item.CodAtiv);
+                    Console.WriteLine(item.Descricao);
+                }
+
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
+        List<AtivModel> MontaRetornoSQLite(DataSet data)
+        {
+            List<AtivModel> retorno;
+            AtivModel objAux;
+            try
+            {
+                retorno = new List<AtivModel>();
+
+                for (int i = 0; i < data.Tables[0].Rows.Count; i++)
+                {
+                    objAux = new AtivModel();
+                    objAux.CodAtiv = Convert.ToInt32(data.Tables[0].Rows[i]["id"]);
+                    objAux.Descricao = data.Tables[0].Rows[i]["nome"].ToString();             
+                    retorno.Add(objAux);
+                    objAux = null;
+                }
+                return retorno;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
 
     }
 }

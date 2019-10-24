@@ -6,23 +6,26 @@ namespace ProjetoPLPCSharp.Layers.DataBases
     {
         public IBanco CriarBanco(string tipoBanco)
         {
-            IBanco retorno;
+            IBanco retorno = null;
             try
             {
                 switch (tipoBanco)
                 {
                     case "SQLServer":
                         retorno = new SQLserver();
-                        return retorno;                      
-                    default:
+                        break;                   
+                    case "SQLite":
+                        retorno = new SQLite();
                         break;
+                    default:
+                        break;                     
                 }
+                return retorno;
             }
             catch (Exception ex)
             {
                 throw ex;
-            }
-            return null;
+            }          
         }
     }
 }

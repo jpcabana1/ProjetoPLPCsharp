@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ProjetoPLPCSharp.Models
 {
-    class DocModel
+   public  class DocModel
     {
         public int Id { get; set; }
         public string Nome { get; set; }

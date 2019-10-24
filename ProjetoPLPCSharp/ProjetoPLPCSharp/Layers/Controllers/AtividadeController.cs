@@ -72,5 +72,10 @@ namespace ProjetoPLPCSharp.Layers.Controllers
                 throw ex;
             }
         }
+
+        public void teste()
+        {
+            objRepo.testeSQLite("Select * from tbTeste");
+        }
     }
 }
