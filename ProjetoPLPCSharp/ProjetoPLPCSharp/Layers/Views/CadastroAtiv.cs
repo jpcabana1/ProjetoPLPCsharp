@@ -1,4 +1,7 @@
-﻿using System;
+﻿using ProjetoPLPCSharp.Layers.Controllers;
+using ProjetoPLPCSharp.Layers.DataBases;
+using ProjetoPLPCSharp.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -14,18 +17,33 @@ namespace ProjetoPLPCSharp.Layers.Views
     {
 
         #region Atributos
-        List<Image> listaDeDocumentos;
+        private List<Image> listaDeDocumentos;
+        private AtividadeController CtrlAtiv;
+        private int CodProf;
         #endregion
 
         #region Construtores
-        public CadastroAtiv()
+        public CadastroAtiv(int codProf)
         {
             InitializeComponent();
             listaDeDocumentos = new List<Image>();
+            CtrlAtiv = new AtividadeController();
+            this.CodProf = codProf;
         }
         #endregion
 
         #region Eventos
+        private void btnCadastro_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                CadastrarAtividade();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message,"Erro ao cadastrar atividade!");
+            }
+        }
         private void CadastroAtiv_Load(object sender, EventArgs e)
         {
             try
@@ -57,7 +75,7 @@ namespace ProjetoPLPCSharp.Layers.Views
         private void btnAnexo_Click(object sender, EventArgs e)
         {
             OpenFileDialog openFileDialog;
-
+            byte[] ImageByteArray;
             try
             {                          
                 openFileDialog = new OpenFileDialog();
@@ -142,11 +160,27 @@ namespace ProjetoPLPCSharp.Layers.Views
                 throw ex;             
             }
         }
+
+        private void CadastrarAtividade()
+        {
+            AtivModel ativ;
+            try
+            {
+                ativ = new AtivModel();
+                ativ.Descricao = cmbStatus.Text;
+                ativ.Pontuacao = Convert.ToInt32(cmbStatus.SelectedValue);
+                ativ.Status = "PENDENTE";
+                ativ.CodProf = CodProf;
+                CtrlAtiv.InserirAtividade(ativ);
+                MessageBox.Show("Atividade cadastrada!");
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
         #endregion
 
-        private void btnCadastro_Click(object sender, EventArgs e)
-        {
-
-        }
+        
     }
 }

@@ -19,3 +19,4 @@ C:\Users\jpcab\OneDrive\GitHub\ProjetoPLPCsharp\ProjetoPLPCSharp\ProjetoPLPCShar
 C:\Users\jpcab\OneDrive\GitHub\ProjetoPLPCsharp\ProjetoPLPCSharp\ProjetoPLPCSharp\bin\Debug\System.Data.SQLite.dll.config
 C:\Users\jpcab\OneDrive\GitHub\ProjetoPLPCsharp\ProjetoPLPCSharp\ProjetoPLPCSharp\obj\Debug\ProjetoPLPCSharp.csproj.CopyComplete
 C:\Users\jpcab\OneDrive\GitHub\ProjetoPLPCsharp\ProjetoPLPCSharp\ProjetoPLPCSharp\obj\Debug\ProjetoPLPCSharp.Layers.Views.CadastroAtiv.resources
+C:\Users\jpcab\OneDrive\GitHub\ProjetoPLPCsharp\ProjetoPLPCSharp\ProjetoPLPCSharp\obj\Debug\ProjetoPLPCSharp.Layers.Views.frmAlterarDados.resources

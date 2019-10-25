@@ -117,11 +117,12 @@ namespace ProjetoPLPCSharp.Layers.Repos
                     " Nome = '" + p_obj.Nome + "', " +
                     " Titulo = '" + p_obj.Titulo + "', " +
                     " TempoXP = " + p_obj.TempoXP + ", " +
-                    " Senha = '" + p_obj.Usuario + "', " +
+                    " Usuario = '" + p_obj.Usuario + "', " +
                     " Cargo = '" + p_obj.Cargo + "', " +
                     " Senha = '" + p_obj.Senha +"', " +
                     " UserStatus = '" + p_obj.UserStatus + "' " +
                     " where id = " + p_obj.Id;
+                objDados.ExecutaComando(Comando);
             }
             catch (Exception ex)
             { 
@@ -146,6 +147,7 @@ namespace ProjetoPLPCSharp.Layers.Repos
                     objAux.Titulo = data.Tables[0].Rows[i]["Titulo"].ToString();
                     objAux.Usuario = data.Tables[0].Rows[i]["Usuario"].ToString();
                     objAux.UserStatus = data.Tables[0].Rows[i]["UserStatus"].ToString();
+                    objAux.Cargo = data.Tables[0].Rows[i]["Cargo"].ToString(); 
                     retorno.Add(objAux);
                     objAux = null;
                 }

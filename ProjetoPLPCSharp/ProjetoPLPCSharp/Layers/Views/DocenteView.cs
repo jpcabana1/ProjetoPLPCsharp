@@ -82,14 +82,15 @@ namespace ProjetoPLPCSharp.Layers.Views
             List<AtivModel> Lista;
             try
             {
-                objAux = new AtivModel();   
-                objAux.Status = cmbStatus.SelectedItem.ToString();
-                if(txtCod.Text != "")
-                    objAux.CodProf = Convert.ToInt32(txtCod.Text);
-                if(txtPont.Text != "")
+                objAux = new AtivModel();
+                objAux.Status = cmbStatus.Text;
+                objAux.CodProf = objDOC.Id;
+                if (txtCod.Text != "")
+                    objAux.CodAtiv = Convert.ToInt32(txtCod.Text);
+                if (txtPont.Text != "")
                     objAux.Pontuacao = Convert.ToInt32(txtPont.Text);
                 Lista = CtrlAtiv.ConsultarAtividade(objAux);
-                
+
                 grdAtividade.Rows.Clear();
                 foreach (AtivModel item in Lista)
                 {
@@ -103,19 +104,11 @@ namespace ProjetoPLPCSharp.Layers.Views
         }
         private void btnCancelar_Click(object sender, EventArgs e)
         {
-            AtivModel ativModel;
+
             try
             {
-                ativModel = new AtivModel();
-                foreach (DataGridViewRow item in grdAtividade.Rows)
-                {
-                    if (Convert.ToInt32(item.Cells[0].Value) == 1)
-                    {
-                        ativModel.CodAtiv = Convert.ToInt32(item.Cells[1].Value);
-                        CtrlAtiv.RemoverAtividade(ativModel);
-                    }
-                }
-
+                Remover();
+                CarregarGrid();
             }
             catch (Exception ex)
             {
@@ -127,13 +120,29 @@ namespace ProjetoPLPCSharp.Layers.Views
             try
             {
                 CarregarTelaCadastro();
+                CarregarGrid();
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Erro ao carregar tela de cadastro");
-               
+
             }
         }
+        private void btnAlterar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                AlterarDados();
+                lblAlteraDodos.Text = "Atenção: Atualização dos dados concluída, " +
+                    "Talvez seja necessário realizar o login novamente para que seus dados sejam " +
+                    "exibidos corretamente";
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Não foi possível alterar seus dados!");
+            }
+        }
+
         #endregion
 
         #region Funções
@@ -143,7 +152,7 @@ namespace ProjetoPLPCSharp.Layers.Views
             try
             {
                 Visible = false;
-                cadastroAtiv = new CadastroAtiv();
+                cadastroAtiv = new CadastroAtiv(objDOC.Id);
                 cadastroAtiv.ShowDialog();
                 cadastroAtiv = null;
                 Visible = true;
@@ -153,7 +162,6 @@ namespace ProjetoPLPCSharp.Layers.Views
                 throw ex;
             }
         }
-
         private void CarregaComboBox()
         {
             try
@@ -189,9 +197,43 @@ namespace ProjetoPLPCSharp.Layers.Views
                 throw ex;
             }
         }
-
+        private void Remover()
+        {
+            AtivModel ativModel;
+            try
+            {
+                ativModel = new AtivModel();
+                foreach (DataGridViewRow item in grdAtividade.Rows)
+                {
+                    if (Convert.ToInt32(item.Cells[0].Value) == 1)
+                    {
+                        ativModel.CodAtiv = Convert.ToInt32(item.Cells[1].Value);
+                        CtrlAtiv.RemoverAtividade(ativModel);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+        private void AlterarDados()
+        {
+            frmAlterarDados frmAlterarDados;
+            try
+            {
+                Visible = false;
+                frmAlterarDados = new frmAlterarDados(objDOC);
+                frmAlterarDados.ShowDialog();
+                frmAlterarDados = null;
+                Visible = true;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
         #endregion
 
-       
     }
 }
