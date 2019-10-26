@@ -13,10 +13,10 @@ using System.Windows.Forms;
 
 namespace ProjetoPLPCSharp
 {
-    public partial class Form1 : Form
+    public partial class TelaLogin : Form
     {
         private DocenteController CtrlDocente;
-        public Form1()
+        public TelaLogin()
         {
             InitializeComponent();
             CtrlDocente = new DocenteController();
@@ -33,26 +33,30 @@ namespace ProjetoPLPCSharp
         private void btnLogin_Click(object sender, EventArgs e)
         {
             DocModel objLogin;
-            DocenteView tela1;
+            DocenteView tela;
+            frmADM  telaADM;
             try
             {
                 objLogin = new DocModel();
                 objLogin.Usuario = txtLogin.Text;
                 objLogin.Senha = txtSenha.Text;
                 objLogin = CtrlDocente.ConsultarDocente(objLogin).First();
+
                 if (objLogin.UserStatus == "DOC")
                 {
                     Visible = false;
-                    tela1 = new DocenteView(objLogin);
-                    
-                    tela1.ShowDialog();
-                    tela1 = null;
+                    tela = new DocenteView(objLogin);                 
+                    tela.ShowDialog();
+                    tela = null;
+                    Visible = true;
+                }else{
+                    Visible = false;
+                    telaADM = new frmADM(objLogin);
+                    telaADM.ShowDialog();
+                    telaADM = null;
                     Visible = true;
                 }
-                else
-                {
 
-                }
             }
             catch (Exception)
             {

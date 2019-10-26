@@ -135,7 +135,6 @@ namespace ProjetoPLPCSharp.Layers.Views
                 MessageBox.Show("Não foi possível alterar seus dados!");
             }
         }
-
         #endregion
 
         #region Funções
@@ -226,7 +225,6 @@ namespace ProjetoPLPCSharp.Layers.Views
                 throw ex;
             }
         }
-
         private void enviar()
         {
             AtivModel objUpdate;
