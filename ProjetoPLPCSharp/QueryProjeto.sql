@@ -1,3 +1,4 @@
+
 --create table tbUser(
 --	id int primary key,
 --	nome varchar(100)
@@ -10,9 +11,9 @@
 --use PRODOC
 
 --ALTER TABLE tbDocente
---  ADD Senha varchar(50) not null
+--  ADD UserStatus varchar(50)
 
---insert into tbDocente(Nome, Titulo, TempoXP, Usuario, Cargo, Senha) values ('João Pitt', 'Mestre', 3, 'pitt', 'Professor Auxiliar', '123')
+--insert into tbDocente(Nome, Titulo, TempoXP, Usuario, Cargo, Senha) values ('ADM', 'Administrador', 100, 'admin', 'Administrador', 'a')
 
 --insert into tbAtividade(descricao, pontucao,status,CodProf) values('Tradução de Livro', 4, 'PEDENTE',2)
 
@@ -24,9 +25,32 @@ select * from tbDocente
 
 --delete from tbDocente where id = 2
 
---delete from tbAtividade where CodProf = 2
-
-
+--delete from tbAtividade where CodProf = 3
 
 --alter table tbDocente
 --add Constraint Usuario UNIQUE(Usuario)
+--update tbDocente set UserStatus = 'ADM' where Id = 1004
+
+--Select * From tbAtividade where CodProf = '1' 
+
+--update tbAtividade set status = 'PENDENTE'
+
+--Select * From tbAtividade where Status = '1' 
+
+--create table tbdocumento(
+--	int CodAtiv not null,
+--	Photo varbinary(max) not null
+--	FOREIGN KEY (CodAtiv) REFERENCES tbAtividade(CodAtiv)
+--)
+
+update tbDocente  set  
+Nome = 'Wagner',  
+Titulo = 'Mestre',  
+TempoXP = 4,  
+Usuario = 'wg',  
+Cargo = 'Professor Auxiliar I',  
+Senha = '123',  
+UserStatus = 'DOC'  
+where id = 1002
+
+select * from tbDocente where Id = 1002

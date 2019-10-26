@@ -127,10 +127,11 @@ namespace ProjetoPLPCSharp.Layers.Repos
             {
                 Comando = "update tbAtividade " +
                     "set " +
-                    "Descricao = '" + p_obj.Descricao + "' " +
-                    "Pontuacao = " + p_obj.Pontuacao + " " +
-                    "Status = " + p_obj.Status + " " +
-                    "where CodProf = " + p_obj.CodAtiv;
+                    "Descricao = '" + p_obj.Descricao + "', " +
+                    "Pontuacao = " + p_obj.Pontuacao + ", " +
+                    "Status = '" + p_obj.Status + "' " +
+                    "where CodAtiv = " + p_obj.CodAtiv;
+                objDados.ExecutaComando(Comando);
             }
             catch (Exception ex)
             {

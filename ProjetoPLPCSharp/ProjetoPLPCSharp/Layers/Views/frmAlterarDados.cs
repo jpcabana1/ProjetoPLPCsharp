@@ -19,7 +19,6 @@ namespace ProjetoPLPCSharp.Layers.Views
         DocModel DocModel;
         #endregion
 
-
         #region Construtor
         public frmAlterarDados(DocModel p_obj)
         {
@@ -27,7 +26,6 @@ namespace ProjetoPLPCSharp.Layers.Views
             this.DocModel = p_obj;
         }
         #endregion
-
 
         #region Eventos
         private void frmAlterarDados_KeyDown(object sender, KeyEventArgs e)
@@ -45,7 +43,6 @@ namespace ProjetoPLPCSharp.Layers.Views
             }
 
         }
-
         private void btnAlterarDados_Click(object sender, EventArgs e)
         {
             try
@@ -57,7 +54,6 @@ namespace ProjetoPLPCSharp.Layers.Views
                 MessageBox.Show("Erro ao alterar Dados!");
             }
         }
-
         #endregion
 
         #region Métodos

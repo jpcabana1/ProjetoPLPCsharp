@@ -14,6 +14,7 @@ namespace ProjetoPLPCSharp.Layers.Repos
         {
             this.objDados = new FacBanco().CriarBanco(tipoBanco);
         }
+
         public void insert(DocModel p_obj)
         {
             try

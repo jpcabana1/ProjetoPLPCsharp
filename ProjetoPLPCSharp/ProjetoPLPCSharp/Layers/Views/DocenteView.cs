@@ -2,7 +2,6 @@
 using ProjetoPLPCSharp.Models;
 using System;
 using System.Collections.Generic;
-using System.Data;
 using System.Windows.Forms;
 
 namespace ProjetoPLPCSharp.Layers.Views
@@ -28,7 +27,6 @@ namespace ProjetoPLPCSharp.Layers.Views
         #endregion
 
         #region Eventos
-
         private void DocenteView_Load(object sender, EventArgs e)
         {
             try
@@ -60,16 +58,11 @@ namespace ProjetoPLPCSharp.Layers.Views
             lblTempo.Text = DateTime.Now.ToLongTimeString();
         }
         private void btnEnviar_Click(object sender, EventArgs e)
-        {
+        {    
             try
             {
-                foreach (DataGridViewRow item in grdAtividade.Rows)
-                {
-                    if (Convert.ToInt32(item.Cells[0].Value) == 1)
-                    {
-
-                    }
-                }
+                enviar();
+                CarregarGrid();
             }
             catch (Exception ex)
             {
@@ -134,8 +127,8 @@ namespace ProjetoPLPCSharp.Layers.Views
             {
                 AlterarDados();
                 lblAlteraDodos.Text = "Atenção: Atualização dos dados concluída, " +
-                    "Talvez seja necessário realizar o login novamente para que seus dados sejam " +
-                    "exibidos corretamente";
+                    "Talvez seja necessário realizar o login novamente para que seus dados ";
+                    
             }
             catch (Exception)
             {
@@ -227,6 +220,32 @@ namespace ProjetoPLPCSharp.Layers.Views
                 frmAlterarDados.ShowDialog();
                 frmAlterarDados = null;
                 Visible = true;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        private void enviar()
+        {
+            AtivModel objUpdate;
+            try
+            {
+                objUpdate = new AtivModel();
+                foreach (DataGridViewRow item in grdAtividade.Rows)
+                {
+                    if (Convert.ToInt32(item.Cells[0].Value) == 1)
+                    {
+                        item.Cells[4].Value = "AVALIANDO";
+                        objUpdate.CodProf = objDOC.Id;
+                        objUpdate.Status = "AVALIANDO";
+                        objUpdate.CodAtiv = Convert.ToInt32(item.Cells[1].Value);
+                        objUpdate.Descricao = item.Cells[2].Value.ToString();
+                        objUpdate.Pontuacao = Convert.ToInt32(item.Cells[3].Value); ;
+                        CtrlAtiv.AtualizarAtividade(objUpdate);
+                    }
+                }
             }
             catch (Exception ex)
             {
