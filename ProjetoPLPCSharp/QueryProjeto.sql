@@ -23,15 +23,15 @@ select * from tbAtividade --where CodProf = 2
 
 select * from tbDocente
 
---delete from tbDocente where id = 2
+--delete from tbDocente where id = 1005
 
---delete from tbAtividade where CodProf = 3
+--delete from tbAtividade where CodProf = 1005
 
 --alter table tbDocente
 --add Constraint Usuario UNIQUE(Usuario)
 --update tbDocente set UserStatus = 'ADM' where Id = 1004
 
---Select * From tbAtividade where CodProf = '1' 
+--Select * From tbAtividade where CodProf = '1006' 
 
 --update tbAtividade set status = 'PENDENTE'
 
@@ -43,14 +43,15 @@ select * from tbDocente
 --	FOREIGN KEY (CodAtiv) REFERENCES tbAtividade(CodAtiv)
 --)
 
-update tbDocente  set  
-Nome = 'Wagner',  
-Titulo = 'Mestre',  
-TempoXP = 4,  
-Usuario = 'wg',  
-Cargo = 'Professor Auxiliar I',  
-Senha = '123',  
-UserStatus = 'DOC'  
-where id = 1002
+--update tbDocente  set  
+--Nome = 'Wagner',  
+--Titulo = 'Mestre',  
+--TempoXP = 4,  
+--Usuario = 'wg',  
+--Cargo = 'Professor Auxiliar I',  
+--Senha = '123',  
+--UserStatus = 'DOC'  
+--where id = 1002
 
-select * from tbDocente where Id = 1002
+--update tbAtividade set Descricao = 'Tradução de Livro', Pontuacao = 4, Status = AVALIANDO where CodAtiv = 1
+

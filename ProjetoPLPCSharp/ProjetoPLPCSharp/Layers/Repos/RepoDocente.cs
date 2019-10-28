@@ -94,7 +94,7 @@ namespace ProjetoPLPCSharp.Layers.Repos
                 throw ex;
             }
         }
-        public List<DocModel> selectAll(DocModel p_obj)
+        public List<DocModel> selectAll()
         {
             List<DocModel> retorno;
             try
@@ -102,12 +102,12 @@ namespace ProjetoPLPCSharp.Layers.Repos
                 retorno = new List<DocModel>();
                 Comando = "Select top 100 * From tbDocente";
                 retorno = MontaRetorno(objDados.ExecutaSelect(Comando));
+                return retorno;
             }
             catch (Exception ex)
             {
                 throw ex;
-            }
-            return null;
+            }     
         }
         public void Update(DocModel p_obj)
         {

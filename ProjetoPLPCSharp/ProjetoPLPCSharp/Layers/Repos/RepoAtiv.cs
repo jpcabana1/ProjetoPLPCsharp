@@ -106,7 +106,7 @@ namespace ProjetoPLPCSharp.Layers.Repos
                 throw ex;
             }
         }
-        public List<AtivModel> selectAll(AtivModel p_obj)
+        public List<AtivModel> selectAll()
         {
             List<AtivModel> retorno;
             try
