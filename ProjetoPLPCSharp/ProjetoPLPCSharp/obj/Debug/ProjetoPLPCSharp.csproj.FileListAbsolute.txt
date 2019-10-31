@@ -22,3 +22,5 @@ C:\Users\jpcab\OneDrive\GitHub\ProjetoPLPCsharp\ProjetoPLPCSharp\ProjetoPLPCShar
 C:\Users\jpcab\OneDrive\GitHub\ProjetoPLPCsharp\ProjetoPLPCSharp\ProjetoPLPCSharp\obj\Debug\ProjetoPLPCSharp.TelaLogin.resources
 C:\Users\jpcab\OneDrive\GitHub\ProjetoPLPCsharp\ProjetoPLPCSharp\ProjetoPLPCSharp\obj\Debug\ProjetoPLPCSharp.Layers.Views.frmADM.resources
 C:\Users\jpcab\OneDrive\GitHub\ProjetoPLPCsharp\ProjetoPLPCSharp\ProjetoPLPCSharp\obj\Debug\ProjetoPLPCSharp.Layers.Views.frmCadDocente.resources
+C:\Users\jpcab\OneDrive\GitHub\ProjetoPLPCsharp\ProjetoPLPCSharp\ProjetoPLPCSharp\obj\Debug\ProjetoPLPCSharp.Layers.Views.frmPomoverDoc.resources
+C:\Users\jpcab\OneDrive\GitHub\ProjetoPLPCsharp\ProjetoPLPCSharp\ProjetoPLPCSharp\obj\Debug\ProjetoPLPCSharp.Layers.Views.NovaTelaCadAtividade.resources

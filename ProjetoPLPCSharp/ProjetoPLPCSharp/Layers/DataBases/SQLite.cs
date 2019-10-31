@@ -10,7 +10,7 @@ namespace ProjetoPLPCSharp.Layers.DataBases
 {
     class SQLite : IBanco
     {
-        private string SqlData = "c:\\testeRemoto.db;Version=3;";
+        private string SqlData = "c:\\prodocdb.sqlite;Version=3;";
         private SQLiteConnection Connection;
         private SQLiteCommand comando;
         private SQLiteDataAdapter Adapter;

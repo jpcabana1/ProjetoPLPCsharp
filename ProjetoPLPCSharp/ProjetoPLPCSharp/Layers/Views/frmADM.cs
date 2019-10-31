@@ -27,6 +27,17 @@ namespace ProjetoPLPCSharp.Layers.Views
         #endregion
 
         #region Eventos
+        private void btnPromo_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                PromoverDocente();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Erro ao Promover docente!");
+            }
+        }
 
         private void btnAtivOK_Click(object sender, EventArgs e)
         {
@@ -84,6 +95,14 @@ namespace ProjetoPLPCSharp.Layers.Views
 
         #region Métodos
 
+        private void PromoverDocente()
+        {
+            Visible = false;
+            frmPomoverDoc frmPomoverDoc = new frmPomoverDoc();
+            frmPomoverDoc.ShowDialog();
+            frmPomoverDoc = null;
+            Visible = true;
+        }
         private void CadastrarDocente()
         {
             Visible = false;
@@ -149,19 +168,23 @@ namespace ProjetoPLPCSharp.Layers.Views
                     ativModel = new AtivModel();
                     ativModel = ListaAtiv.Find(p => p.CodAtiv == Convert.ToInt32(item.Cells[0].Value));
                     ativModel.Status = "OK";
-                    ControllerAtiv.AtualizarAtividade(ativModel);                
-                }            
+                    ControllerAtiv.AtualizarAtividade(ativModel);
+                }
             }
-            if(grdAtiv.Rows.Count != 0)
+            if (grdAtiv.Rows.Count != 0)
             {
                 ativModel = ListaAtiv.Find(e => e.CodProf == Convert.ToInt32(grdAtiv.Rows[0].Cells[4].Value));
                 atualizarGrid(ativModel.CodProf);
             }
         }
 
+
+
         #endregion
 
+        private void grdDocente_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
 
-    }    
-
+        }
+    }
 }

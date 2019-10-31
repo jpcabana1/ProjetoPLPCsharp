@@ -14,7 +14,7 @@ namespace ProjetoPLPCSharp.Layers.Controllers
 
         public DocenteController()
         {
-            this.objRepo = new RepoDocente("SQLServer");
+            this.objRepo = new RepoDocente("SQLite");
         }
 
         public void InserirDocente(DocModel p_obj)

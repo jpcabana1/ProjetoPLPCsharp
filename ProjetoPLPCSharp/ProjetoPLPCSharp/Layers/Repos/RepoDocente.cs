@@ -19,7 +19,7 @@ namespace ProjetoPLPCSharp.Layers.Repos
         {
             try
             {
-                Comando = "insert into tbDocente" +
+                Comando = "insert into tbUsuario" +
                     "(Nome, " +
                     "Titulo, " +
                     "TempoXP, " +
@@ -46,7 +46,7 @@ namespace ProjetoPLPCSharp.Layers.Repos
         {
             try
             {
-                Comando = "delete from tbDocente where id = " + p_obj.Id;
+                Comando = "delete from tbUsuario where id = " + p_obj.Id;
                 objDados.ExecutaComando(Comando);
             }
             catch (Exception ex)
@@ -60,7 +60,7 @@ namespace ProjetoPLPCSharp.Layers.Repos
             try
             {
                 retorno = new List<DocModel>();
-                Comando = "Select * From tbDocente";
+                Comando = "Select * From tbUsuario";
 
                 if (p_obj.Id != 0) {
                     Comando = Comando + " where id = " + p_obj.Id;
@@ -86,7 +86,7 @@ namespace ProjetoPLPCSharp.Layers.Repos
                         Comando = Comando + " and Senha = '" + p_obj.Senha + "' ";
                     }
                 }
-                retorno = MontaRetorno(objDados.ExecutaSelect(Comando));
+                retorno = MontaRetornoSQLite(objDados.ExecutaSelect(Comando));
                 return retorno;
             }
             catch (Exception ex)
@@ -100,8 +100,8 @@ namespace ProjetoPLPCSharp.Layers.Repos
             try
             {          
                 retorno = new List<DocModel>();
-                Comando = "Select top 100 * From tbDocente";
-                retorno = MontaRetorno(objDados.ExecutaSelect(Comando));
+                Comando = "Select * From tbUsuario LIMIT 100";
+                retorno = MontaRetornoSQLite(objDados.ExecutaSelect(Comando));
                 return retorno;
             }
             catch (Exception ex)
@@ -159,6 +159,58 @@ namespace ProjetoPLPCSharp.Layers.Repos
                 throw ex;
             }          
         }
+
+        /*
+        public void testeSQLite(string Comand)
+        {
+            IBanco SQLiteBanco;
+            try
+            {
+                SQLiteBanco = new FacBanco().CriarBanco("SQLite");
+                foreach (AtivModel item in MontaRetornoSQLite(SQLiteBanco.ExecutaSelect(Comand)))
+                {
+                    Console.WriteLine(item.CodAtiv);
+                    Console.WriteLine(item.Descricao);
+                }
+
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+    */
+
+        List<DocModel> MontaRetornoSQLite(DataSet data)
+        {
+            List<DocModel> retorno;
+            DocModel objAux;
+            try
+            {
+                retorno = new List<DocModel>();
+
+                for (int i = 0; i < data.Tables[0].Rows.Count; i++)
+                {
+                    objAux = new DocModel();
+                    objAux.Id = Convert.ToInt32(data.Tables[0].Rows[i]["id"]);
+                    objAux.Nome = data.Tables[0].Rows[i]["nome"].ToString();
+                    objAux.Senha = data.Tables[0].Rows[i]["senha"].ToString();
+                    objAux.TempoXP = Convert.ToInt32(data.Tables[0].Rows[i]["tempoXP"]);
+                    objAux.Titulo = data.Tables[0].Rows[i]["titulo"].ToString();
+                    objAux.Usuario = data.Tables[0].Rows[i]["usuario"].ToString();
+                    objAux.UserStatus = data.Tables[0].Rows[i]["tipo"].ToString();
+                    //objAux.Cargo = data.Tables[0].Rows[i]["cargo"].ToString();
+                    retorno.Add(objAux);
+                    objAux = null;
+                }
+                return retorno;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
 
     }
 }

@@ -16,6 +16,7 @@ namespace ProjetoPLPCSharp.Models
         public string Cargo { get; set; }
         public string Senha { get; set; }
         public string UserStatus { get; set; }
+
         public DocModel()
         {
             Id = 0;
