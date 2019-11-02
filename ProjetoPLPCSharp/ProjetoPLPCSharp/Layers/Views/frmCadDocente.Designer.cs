@@ -39,21 +39,16 @@
             this.label4 = new System.Windows.Forms.Label();
             this.txtCargo = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.txtSenha = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.txtConfimarSenha = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btnCadastrar
             // 
-            this.btnCadastrar.Location = new System.Drawing.Point(33, 512);
+            this.btnCadastrar.Location = new System.Drawing.Point(33, 390);
             this.btnCadastrar.Name = "btnCadastrar";
             this.btnCadastrar.Size = new System.Drawing.Size(208, 34);
             this.btnCadastrar.TabIndex = 0;
             this.btnCadastrar.Text = "Cadastrar";
             this.btnCadastrar.UseVisualStyleBackColor = true;
-            this.btnCadastrar.Click += new System.EventHandler(this.btnCadastrar_Click);
             // 
             // label1
             // 
@@ -145,52 +140,12 @@
             this.label5.TabIndex = 9;
             this.label5.Text = "Cargo:";
             // 
-            // txtSenha
-            // 
-            this.txtSenha.Location = new System.Drawing.Point(33, 390);
-            this.txtSenha.Name = "txtSenha";
-            this.txtSenha.Size = new System.Drawing.Size(208, 22);
-            this.txtSenha.TabIndex = 12;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(29, 367);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(67, 20);
-            this.label6.TabIndex = 11;
-            this.label6.Text = "Senha:";
-            // 
-            // txtConfimarSenha
-            // 
-            this.txtConfimarSenha.Location = new System.Drawing.Point(33, 454);
-            this.txtConfimarSenha.Name = "txtConfimarSenha";
-            this.txtConfimarSenha.Size = new System.Drawing.Size(208, 22);
-            this.txtConfimarSenha.TabIndex = 14;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(29, 431);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(154, 20);
-            this.label7.TabIndex = 13;
-            this.label7.Text = "Confirmar senha:";
-            // 
             // frmCadDocente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkRed;
-            this.ClientSize = new System.Drawing.Size(290, 567);
-            this.Controls.Add(this.txtConfimarSenha);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.txtSenha);
-            this.Controls.Add(this.label6);
+            this.ClientSize = new System.Drawing.Size(290, 450);
             this.Controls.Add(this.txtCargo);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.txtXP);
@@ -226,9 +181,5 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtCargo;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox txtSenha;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox txtConfimarSenha;
-        private System.Windows.Forms.Label label7;
     }
 }

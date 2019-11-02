@@ -94,20 +94,26 @@ namespace ProjetoPLPCSharp.Layers.Repos
                 throw ex;
             }
         }
-        public List<DocModel> selectAll()
+        public List<DocModel> selectAll(DocModel p_obj)
         {
             List<DocModel> retorno;
             try
             {          
                 retorno = new List<DocModel>();
+<<<<<<< HEAD
                 Comando = "Select * From tbUsuario LIMIT 100";
                 retorno = MontaRetornoSQLite(objDados.ExecutaSelect(Comando));
                 return retorno;
+=======
+                Comando = "Select top 100 * From tbDocente";
+                retorno = MontaRetorno(objDados.ExecutaSelect(Comando));
+>>>>>>> parent of 5b0831d... Faltando Foto e Promoção
             }
             catch (Exception ex)
             {
                 throw ex;
-            }     
+            }
+            return null;
         }
         public void Update(DocModel p_obj)
         {

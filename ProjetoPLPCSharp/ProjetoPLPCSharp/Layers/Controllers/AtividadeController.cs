@@ -61,11 +61,11 @@ namespace ProjetoPLPCSharp.Layers.Controllers
                 throw ex;
             }
         }
-        public List<AtivModel> ConsultarTodos()
+        public List<AtivModel> ConsultarTodos(AtivModel p_obj)
         {
             try
             {
-                return objRepo.selectAll();
+                return objRepo.selectAll(p_obj);
             }
             catch (Exception ex)
             {

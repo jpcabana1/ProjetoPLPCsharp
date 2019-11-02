@@ -109,7 +109,6 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.KeyPreview = true;
             this.Name = "CadastroAtiv";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cadastro de Atividades:";
             this.Load += new System.EventHandler(this.CadastroAtiv_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.CadastroAtiv_KeyDown);

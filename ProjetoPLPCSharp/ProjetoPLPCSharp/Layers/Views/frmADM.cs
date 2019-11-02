@@ -1,7 +1,6 @@
 ﻿using ProjetoPLPCSharp.Layers.Controllers;
 using ProjetoPLPCSharp.Models;
 using System;
-using System.Collections.Generic;
 using System.Windows.Forms;
 
 namespace ProjetoPLPCSharp.Layers.Views
@@ -9,11 +8,9 @@ namespace ProjetoPLPCSharp.Layers.Views
     public partial class frmADM : Form
     {
         #region Atributos
-        private DocModel docModel;
-        private List<DocModel> ListaDoc;
-        private List<AtivModel> ListaAtiv;
-        private DocenteController ControllerDoc;
-        private AtividadeController ControllerAtiv;
+        DocModel docModel;
+        DocenteController ControllerDoc;
+        AtividadeController ControllerAtiv;
         #endregion
 
         #region Construtor
@@ -27,6 +24,7 @@ namespace ProjetoPLPCSharp.Layers.Views
         #endregion
 
         #region Eventos
+<<<<<<< HEAD
         private void btnPromo_Click(object sender, EventArgs e)
         {
             try
@@ -79,6 +77,8 @@ namespace ProjetoPLPCSharp.Layers.Views
                 MessageBox.Show(ex.Message, "Ocorreu um erro ao carregar a tela!");
             }
         }
+=======
+>>>>>>> parent of 5b0831d... Faltando Foto e Promoção
         private void btnCadDocente_Click(object sender, EventArgs e)
         {
             try
@@ -87,13 +87,13 @@ namespace ProjetoPLPCSharp.Layers.Views
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Erro no Cadastro");
+                MessageBox.Show(ex.Message,"Erro no Cadastro");
             }
         }
-
         #endregion
 
         #region Métodos
+<<<<<<< HEAD
 
         private void PromoverDocente()
         {
@@ -103,62 +103,21 @@ namespace ProjetoPLPCSharp.Layers.Views
             frmPomoverDoc = null;
             Visible = true;
         }
+=======
+>>>>>>> parent of 5b0831d... Faltando Foto e Promoção
         private void CadastrarDocente()
         {
             Visible = false;
             frmCadDocente frmCadDocente = new frmCadDocente();
             frmCadDocente.ShowDialog();
-            MontaGridDoc();
             Visible = true;
         }
-        private void CarregarTela()
-        {
-            MontaGridDoc();
-        }
-        private void MontaGridAtiv(int index)
-        {
-            AtivModel ativModel = new AtivModel();
-            grdAtiv.Rows.Clear();
-            ativModel.CodProf = Convert.ToInt32(grdDocente.Rows[index].Cells[0].Value);
-            ListaAtiv = ControllerAtiv.ConsultarAtividade(ativModel);
-            foreach (AtivModel item in ListaAtiv)
-            {
-                if (item.Status != "PENDENTE")
-                {
-                    grdAtiv.Rows.Add(item.CodAtiv, item.Descricao, item.Pontuacao, item.Status, item.CodProf);
-                }
-            }
-        }
-        private void atualizarGrid(int id)
-        {
-            grdAtiv.Rows.Clear();
-            AtivModel ativModel = new AtivModel();
-            ativModel.CodProf = id;
-            ListaAtiv = ControllerAtiv.ConsultarAtividade(ativModel);
-            foreach (AtivModel item in ListaAtiv)
-            {
-                if (item.Status != "PENDENTE")
-                {
-                    grdAtiv.Rows.Add(item.CodAtiv, item.Descricao, item.Pontuacao, item.Status, item.CodProf);
-                }
-            }
-        }
 
-        private void MontaGridDoc()
-        {
-            grdDocente.Rows.Clear();
+        #endregion
 
-            ListaDoc = ControllerDoc.ConsultarTodos();
-            foreach (DocModel item in ListaDoc)
-            {
-                if (item.UserStatus == "DOC")
-                {
-                    grdDocente.Rows.Add(item.Id, item.Nome, item.Titulo, item.TempoXP, item.Cargo);
-                }
-            }
-        }
-        private void ConcluirAtividade()
+        private void frmADM_KeyDown(object sender, KeyEventArgs e)
         {
+<<<<<<< HEAD
             AtivModel ativModel;
             int idAux;
             foreach (DataGridViewRow item in grdAtiv.Rows)
@@ -172,11 +131,14 @@ namespace ProjetoPLPCSharp.Layers.Views
                 }
             }
             if (grdAtiv.Rows.Count != 0)
+=======
+            if (e.KeyCode == Keys.Escape)
+>>>>>>> parent of 5b0831d... Faltando Foto e Promoção
             {
-                ativModel = ListaAtiv.Find(e => e.CodProf == Convert.ToInt32(grdAtiv.Rows[0].Cells[4].Value));
-                atualizarGrid(ativModel.CodProf);
+                Close();
             }
         }
+<<<<<<< HEAD
 
 
 
@@ -188,3 +150,7 @@ namespace ProjetoPLPCSharp.Layers.Views
         }
     }
 }
+=======
+    }
+}
+>>>>>>> parent of 5b0831d... Faltando Foto e Promoção

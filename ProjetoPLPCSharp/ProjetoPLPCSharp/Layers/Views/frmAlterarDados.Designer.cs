@@ -144,7 +144,6 @@
             this.Controls.Add(this.txtNome);
             this.KeyPreview = true;
             this.Name = "frmAlterarDados";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmAlterarDados";
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.frmAlterarDados_KeyDown);
             this.ResumeLayout(false);
