@@ -60,8 +60,43 @@ select * from tbDocente
 
 --create table tbCargo(
 --	Cargo varchar(50),
+--	pontuacao int,
+--	tempo int,
 --	Vagas int
 --);
+
+
+
+--update tbCargo set Vagas = 300
+
+select * from tbCargo
+
+--drop table tbCargo
+
+--Professor Assistente I - 20
+--Professor Assistente II - 30
+--Professor Assistente III - 50
+--Professor Assistente IV - 60
+--Professor Adjunto I - 150 - 4 anos
+--Professor Adjunto II - 150
+--Professor Adjunto III - 150
+--Professor Adjunto IV - 150
+--Professor Titular - 300 - 6 anos
+
+--insert into tbCargo(Cargo, pontuacao, tempo ,vagas) values ('Professor Assistente I', 20, 3, 70)
+--insert into tbCargo(Cargo, pontuacao, tempo ,vagas) values ('Professor Assistente II', 30, 3, 60)
+--insert into tbCargo(Cargo, pontuacao, tempo ,vagas) values ('Professor Assistente II', 50, 3, 50)
+--insert into tbCargo(Cargo, pontuacao, tempo ,vagas) values ('Professor Assistente IV', 60, 3, 40)
+--insert into tbCargo(Cargo, pontuacao, tempo ,vagas) values ('Professor Adjunto I', 150, 4, 30)
+--insert into tbCargo(Cargo, pontuacao, tempo ,vagas) values ('Professor Adjunto II', 150, 3, 20)
+--insert into tbCargo(Cargo, pontuacao, tempo ,vagas) values ('Professor Adjunto III', 150, 3, 10)
+--insert into tbCargo(Cargo, pontuacao, tempo ,vagas) values ('Professor Adjunto IV', 150, 3, 5)
+--insert into tbCargo(Cargo, pontuacao, tempo ,vagas) values ('Professor Titular I', 300, 6, 1)
+
+
+
+
+select * from tbCargo
 
 
 
