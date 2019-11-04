@@ -39,6 +39,19 @@ namespace ProjetoPLPCSharp.Layers.Controllers
                 throw ex;
             }
         }
+
+        public void AtualizarStatus(string Status, int ID)
+        {
+            try
+            {
+                objRepo.UpdateStatus(Status,ID);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
         public void RemoverAtividade(AtivModel p_obj)
         {
             try
@@ -61,6 +74,21 @@ namespace ProjetoPLPCSharp.Layers.Controllers
                 throw ex;
             }
         }
+
+
+        public List<AtivModel> ConsultarAtividadePorID(int codProf)
+        {
+            try
+            {
+                return objRepo.SelectByID(codProf);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+
         public List<AtivModel> ConsultarTodos(AtivModel p_obj)
         {
             try

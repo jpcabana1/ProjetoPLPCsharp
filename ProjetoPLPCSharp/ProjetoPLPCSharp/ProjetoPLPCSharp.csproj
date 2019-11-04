@@ -64,6 +64,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Layers\Controllers\CargoController.cs" />
+    <Compile Include="Layers\Repos\ICargo.cs" />
+    <Compile Include="Layers\Repos\RepoCargo.cs" />
     <Compile Include="Layers\Views\frmADM.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -123,6 +126,7 @@
       <DependentUpon>frmAlterarDados.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\AtivModel.cs" />
+    <Compile Include="Models\CargoModel.cs" />
     <Compile Include="Models\DocModel.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

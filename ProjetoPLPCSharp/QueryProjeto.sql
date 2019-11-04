@@ -41,14 +41,27 @@ select * from tbDocente
 --	FOREIGN KEY (CodAtiv) REFERENCES tbAtividade(CodAtiv)
 --)
 
-update tbDocente  set  
-Nome = 'Wagner',  
-Titulo = 'Mestre',  
-TempoXP = 4,  
-Usuario = 'wg',  
-Cargo = 'Professor Auxiliar I',  
-Senha = '123',  
-UserStatus = 'DOC'  
-where id = 1002
+--update tbDocente  set  
+--Nome = 'Wagner',  
+--Titulo = 'Mestre',  
+--TempoXP = 4,  
+--Usuario = 'wg',  
+--Cargo = 'Professor Auxiliar I',  
+--Senha = '123',  
+--UserStatus = 'DOC'  
+--where id = 1002
 
-select * from tbDocente where Id = 1002
+--select * from tbDocente where Id = 1002
+
+--Select * From tbDocente where Usuario =  'admin'  and Senha = 'a' 
+
+--update tbDocente set Titulo = 'Mestre' , Cargo = 'Professor Auxiliar' where Id = 1007
+
+
+--create table tbCargo(
+--	Cargo varchar(50),
+--	Vagas int
+--);
+
+
+

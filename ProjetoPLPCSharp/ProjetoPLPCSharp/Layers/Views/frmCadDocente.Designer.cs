@@ -43,12 +43,13 @@
             // 
             // btnCadastrar
             // 
-            this.btnCadastrar.Location = new System.Drawing.Point(33, 390);
+            this.btnCadastrar.Location = new System.Drawing.Point(33, 455);
             this.btnCadastrar.Name = "btnCadastrar";
             this.btnCadastrar.Size = new System.Drawing.Size(208, 34);
             this.btnCadastrar.TabIndex = 0;
             this.btnCadastrar.Text = "Cadastrar";
             this.btnCadastrar.UseVisualStyleBackColor = true;
+            this.btnCadastrar.Click += new System.EventHandler(this.btnCadastrar_Click);
             // 
             // label1
             // 
@@ -145,7 +146,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkRed;
-            this.ClientSize = new System.Drawing.Size(290, 450);
+            this.ClientSize = new System.Drawing.Size(290, 513);
             this.Controls.Add(this.txtCargo);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.txtXP);
@@ -162,7 +163,6 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmCadDocente";
             this.Load += new System.EventHandler(this.frmCadDocente_Load);
-            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.frmCadDocente_KeyDown);
             this.ResumeLayout(false);
             this.PerformLayout();
 

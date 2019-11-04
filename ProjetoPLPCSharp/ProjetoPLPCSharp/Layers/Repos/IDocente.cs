@@ -13,6 +13,6 @@ namespace ProjetoPLPCSharp.Layers.Repos
         void Update(DocModel p_obj);
         void Remove(DocModel p_obj);
         List<DocModel> Select(DocModel p_obj);
-        List<DocModel> selectAll(DocModel p_obj);
+        List<DocModel> selectAll();
     }
 }

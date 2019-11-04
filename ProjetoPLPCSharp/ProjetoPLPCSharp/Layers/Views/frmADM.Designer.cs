@@ -30,30 +30,25 @@
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnAtivOK = new System.Windows.Forms.Button();
-<<<<<<< HEAD
-            this.grdDocente = new System.Windows.Forms.DataGridView();
-=======
             this.btnPromo = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
->>>>>>> parent of 5b0831d... Faltando Foto e Promoção
+            this.btnCadDocente = new System.Windows.Forms.Button();
+            this.grdDoc = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.grdAtiv = new System.Windows.Forms.DataGridView();
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.S = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnPromo = new System.Windows.Forms.Button();
-            this.btnCadDocente = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grdDoc)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grdAtiv)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -63,13 +58,9 @@
             this.groupBox1.Controls.Add(this.btnCadDocente);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.ForeColor = System.Drawing.Color.White;
-<<<<<<< HEAD
-            this.groupBox1.Location = new System.Drawing.Point(217, 12);
-=======
-            this.groupBox1.Location = new System.Drawing.Point(30, 51);
->>>>>>> parent of 5b0831d... Faltando Foto e Promoção
+            this.groupBox1.Location = new System.Drawing.Point(234, 37);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1069, 142);
+            this.groupBox1.Size = new System.Drawing.Size(962, 142);
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Ferramentas:";
@@ -78,64 +69,66 @@
             // 
             this.btnAtivOK.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAtivOK.ForeColor = System.Drawing.Color.Black;
-<<<<<<< HEAD
             this.btnAtivOK.Image = global::ProjetoPLPCSharp.Properties.Resources.Confirmar;
             this.btnAtivOK.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAtivOK.Location = new System.Drawing.Point(751, 52);
-=======
-            this.btnAtivOK.Location = new System.Drawing.Point(589, 52);
->>>>>>> parent of 5b0831d... Faltando Foto e Promoção
+            this.btnAtivOK.Location = new System.Drawing.Point(668, 52);
             this.btnAtivOK.Name = "btnAtivOK";
             this.btnAtivOK.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.btnAtivOK.Size = new System.Drawing.Size(250, 56);
             this.btnAtivOK.TabIndex = 2;
             this.btnAtivOK.Text = "Concluir Atividade";
             this.btnAtivOK.UseVisualStyleBackColor = true;
+            this.btnAtivOK.Click += new System.EventHandler(this.btnAtivOK_Click);
             // 
-<<<<<<< HEAD
-            // grdDocente
-=======
             // btnPromo
             // 
             this.btnPromo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPromo.ForeColor = System.Drawing.Color.Black;
-            this.btnPromo.Location = new System.Drawing.Point(305, 52);
+            this.btnPromo.Image = global::ProjetoPLPCSharp.Properties.Resources.Up;
+            this.btnPromo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnPromo.Location = new System.Drawing.Point(336, 52);
             this.btnPromo.Name = "btnPromo";
             this.btnPromo.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.btnPromo.Size = new System.Drawing.Size(194, 56);
+            this.btnPromo.Size = new System.Drawing.Size(269, 56);
             this.btnPromo.TabIndex = 1;
             this.btnPromo.Text = "Promover Docente";
             this.btnPromo.UseVisualStyleBackColor = true;
+            this.btnPromo.Click += new System.EventHandler(this.btnPromo_Click);
             // 
-            // dataGridView1
->>>>>>> parent of 5b0831d... Faltando Foto e Promoção
+            // btnCadDocente
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.btnCadDocente.ForeColor = System.Drawing.Color.Black;
+            this.btnCadDocente.Image = global::ProjetoPLPCSharp.Properties.Resources.Create;
+            this.btnCadDocente.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCadDocente.Location = new System.Drawing.Point(18, 52);
+            this.btnCadDocente.Name = "btnCadDocente";
+            this.btnCadDocente.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.btnCadDocente.Size = new System.Drawing.Size(272, 56);
+            this.btnCadDocente.TabIndex = 0;
+            this.btnCadDocente.Text = "Cadastrar Docente";
+            this.btnCadDocente.UseVisualStyleBackColor = true;
+            this.btnCadDocente.Click += new System.EventHandler(this.btnCadDocente_Click);
+            // 
+            // grdDoc
+            // 
+            this.grdDoc.AllowUserToAddRows = false;
+            this.grdDoc.AllowUserToDeleteRows = false;
+            this.grdDoc.BackgroundColor = System.Drawing.Color.White;
+            this.grdDoc.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.grdDoc.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
             this.Column2,
             this.Column3,
             this.Column4,
             this.Column5});
-<<<<<<< HEAD
-            this.grdDocente.Location = new System.Drawing.Point(746, 240);
-            this.grdDocente.Name = "grdDocente";
-            this.grdDocente.RowHeadersWidth = 51;
-            this.grdDocente.RowTemplate.Height = 24;
-            this.grdDocente.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.grdDocente.ShowEditingIcon = false;
-            this.grdDocente.Size = new System.Drawing.Size(676, 512);
-            this.grdDocente.TabIndex = 4;
-            this.grdDocente.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdDocente_CellContentClick);
-            this.grdDocente.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdDocente_CellDoubleClick);
-=======
-            this.dataGridView1.Location = new System.Drawing.Point(30, 259);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(676, 512);
-            this.dataGridView1.TabIndex = 4;
->>>>>>> parent of 5b0831d... Faltando Foto e Promoção
+            this.grdDoc.Location = new System.Drawing.Point(30, 259);
+            this.grdDoc.Name = "grdDoc";
+            this.grdDoc.RowHeadersWidth = 51;
+            this.grdDoc.RowTemplate.Height = 24;
+            this.grdDoc.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.grdDoc.Size = new System.Drawing.Size(676, 512);
+            this.grdDoc.TabIndex = 4;
+            this.grdDoc.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdDoc_CellClick);
             // 
             // Column1
             // 
@@ -172,31 +165,25 @@
             this.Column5.Name = "Column5";
             this.Column5.Width = 125;
             // 
-            // dataGridView2
+            // grdAtiv
             // 
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.grdAtiv.AllowUserToAddRows = false;
+            this.grdAtiv.AllowUserToDeleteRows = false;
+            this.grdAtiv.BackgroundColor = System.Drawing.Color.White;
+            this.grdAtiv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.grdAtiv.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column6,
             this.Column7,
             this.Column8,
             this.S,
             this.Column9});
-<<<<<<< HEAD
-            this.grdAtiv.Location = new System.Drawing.Point(31, 240);
+            this.grdAtiv.Location = new System.Drawing.Point(746, 259);
             this.grdAtiv.Name = "grdAtiv";
             this.grdAtiv.RowHeadersWidth = 51;
             this.grdAtiv.RowTemplate.Height = 24;
             this.grdAtiv.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.grdAtiv.Size = new System.Drawing.Size(678, 512);
             this.grdAtiv.TabIndex = 5;
-=======
-            this.dataGridView2.Location = new System.Drawing.Point(1041, 259);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.RowHeadersWidth = 51;
-            this.dataGridView2.RowTemplate.Height = 24;
-            this.dataGridView2.Size = new System.Drawing.Size(678, 512);
-            this.dataGridView2.TabIndex = 5;
->>>>>>> parent of 5b0831d... Faltando Foto e Promoção
             // 
             // Column6
             // 
@@ -233,41 +220,12 @@
             this.Column9.Name = "Column9";
             this.Column9.Width = 125;
             // 
-            // btnPromo
-            // 
-            this.btnPromo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPromo.ForeColor = System.Drawing.Color.Black;
-            this.btnPromo.Image = global::ProjetoPLPCSharp.Properties.Resources.Up;
-            this.btnPromo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnPromo.Location = new System.Drawing.Point(385, 52);
-            this.btnPromo.Name = "btnPromo";
-            this.btnPromo.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.btnPromo.Size = new System.Drawing.Size(269, 56);
-            this.btnPromo.TabIndex = 1;
-            this.btnPromo.Text = "Promover Docente";
-            this.btnPromo.UseVisualStyleBackColor = true;
-            this.btnPromo.Click += new System.EventHandler(this.btnPromo_Click);
-            // 
-            // btnCadDocente
-            // 
-            this.btnCadDocente.ForeColor = System.Drawing.Color.Black;
-            this.btnCadDocente.Image = global::ProjetoPLPCSharp.Properties.Resources.Create;
-            this.btnCadDocente.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCadDocente.Location = new System.Drawing.Point(18, 52);
-            this.btnCadDocente.Name = "btnCadDocente";
-            this.btnCadDocente.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.btnCadDocente.Size = new System.Drawing.Size(272, 56);
-            this.btnCadDocente.TabIndex = 0;
-            this.btnCadDocente.Text = "Cadastrar Docente";
-            this.btnCadDocente.UseVisualStyleBackColor = true;
-            this.btnCadDocente.Click += new System.EventHandler(this.btnCadDocente_Click);
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(27, 208);
+            this.label1.Location = new System.Drawing.Point(743, 225);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(96, 20);
             this.label1.TabIndex = 6;
@@ -278,7 +236,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(742, 217);
+            this.label2.Location = new System.Drawing.Point(26, 225);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(89, 20);
             this.label2.TabIndex = 7;
@@ -289,25 +247,20 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkRed;
-<<<<<<< HEAD
-            this.ClientSize = new System.Drawing.Size(1453, 764);
+            this.ClientSize = new System.Drawing.Size(1452, 783);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.grdAtiv);
-            this.Controls.Add(this.grdDocente);
-=======
-            this.ClientSize = new System.Drawing.Size(1768, 783);
-            this.Controls.Add(this.dataGridView2);
-            this.Controls.Add(this.dataGridView1);
->>>>>>> parent of 5b0831d... Faltando Foto e Promoção
+            this.Controls.Add(this.grdDoc);
             this.Controls.Add(this.groupBox1);
             this.KeyPreview = true;
             this.Name = "frmADM";
             this.Text = "frmADM";
+            this.Load += new System.EventHandler(this.frmADM_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.frmADM_KeyDown);
             this.groupBox1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grdDoc)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grdAtiv)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -319,13 +272,13 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button btnAtivOK;
         private System.Windows.Forms.Button btnPromo;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView grdDoc;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
-        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.DataGridView grdAtiv;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column8;

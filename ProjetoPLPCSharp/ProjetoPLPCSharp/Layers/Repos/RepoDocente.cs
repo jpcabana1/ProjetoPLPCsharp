@@ -19,7 +19,7 @@ namespace ProjetoPLPCSharp.Layers.Repos
         {
             try
             {
-                Comando = "insert into tbUsuario" +
+                Comando = "insert into tbDocente" +
                     "(Nome, " +
                     "Titulo, " +
                     "TempoXP, " +
@@ -46,7 +46,7 @@ namespace ProjetoPLPCSharp.Layers.Repos
         {
             try
             {
-                Comando = "delete from tbUsuario where id = " + p_obj.Id;
+                Comando = "delete from tbDocente where id = " + p_obj.Id;
                 objDados.ExecutaComando(Comando);
             }
             catch (Exception ex)
@@ -60,7 +60,7 @@ namespace ProjetoPLPCSharp.Layers.Repos
             try
             {
                 retorno = new List<DocModel>();
-                Comando = "Select * From tbUsuario";
+                Comando = "Select * From tbDocente";
 
                 if (p_obj.Id != 0) {
                     Comando = Comando + " where id = " + p_obj.Id;
@@ -84,9 +84,23 @@ namespace ProjetoPLPCSharp.Layers.Repos
                     else
                     {
                         Comando = Comando + " and Senha = '" + p_obj.Senha + "' ";
+                    }              
+
+                }
+
+                if (p_obj.Nome != "")
+                {
+                    if (Comando.IndexOf("where") == -1)
+                    {
+                        Comando = Comando + " where Nome =  '" + p_obj.Nome + "' ";
+                    }
+                    else
+                    {
+                        Comando = Comando + " and Nome = '" + p_obj.Nome + "' ";
                     }
                 }
-                retorno = MontaRetornoSQLite(objDados.ExecutaSelect(Comando));
+
+                retorno = MontaRetorno(objDados.ExecutaSelect(Comando));
                 return retorno;
             }
             catch (Exception ex)
@@ -94,26 +108,21 @@ namespace ProjetoPLPCSharp.Layers.Repos
                 throw ex;
             }
         }
-        public List<DocModel> selectAll(DocModel p_obj)
+        public List<DocModel> selectAll()
         {
             List<DocModel> retorno;
             try
             {          
                 retorno = new List<DocModel>();
-<<<<<<< HEAD
-                Comando = "Select * From tbUsuario LIMIT 100";
-                retorno = MontaRetornoSQLite(objDados.ExecutaSelect(Comando));
-                return retorno;
-=======
+
                 Comando = "Select top 100 * From tbDocente";
                 retorno = MontaRetorno(objDados.ExecutaSelect(Comando));
->>>>>>> parent of 5b0831d... Faltando Foto e Promoção
+                return retorno;
             }
             catch (Exception ex)
             {
                 throw ex;
             }
-            return null;
         }
         public void Update(DocModel p_obj)
         {
@@ -198,14 +207,14 @@ namespace ProjetoPLPCSharp.Layers.Repos
                 for (int i = 0; i < data.Tables[0].Rows.Count; i++)
                 {
                     objAux = new DocModel();
-                    objAux.Id = Convert.ToInt32(data.Tables[0].Rows[i]["id"]);
-                    objAux.Nome = data.Tables[0].Rows[i]["nome"].ToString();
-                    objAux.Senha = data.Tables[0].Rows[i]["senha"].ToString();
-                    objAux.TempoXP = Convert.ToInt32(data.Tables[0].Rows[i]["tempoXP"]);
-                    objAux.Titulo = data.Tables[0].Rows[i]["titulo"].ToString();
-                    objAux.Usuario = data.Tables[0].Rows[i]["usuario"].ToString();
-                    objAux.UserStatus = data.Tables[0].Rows[i]["tipo"].ToString();
-                    //objAux.Cargo = data.Tables[0].Rows[i]["cargo"].ToString();
+                    objAux.Id = Convert.ToInt32(data.Tables[0].Rows[i]["Id"]);
+                    objAux.Nome = data.Tables[0].Rows[i]["Nome"].ToString();
+                    objAux.Senha = data.Tables[0].Rows[i]["Senha"].ToString();
+                    objAux.TempoXP = Convert.ToInt32(data.Tables[0].Rows[i]["TempoXP"]);
+                    objAux.Titulo = data.Tables[0].Rows[i]["Titulo"].ToString();
+                    objAux.Usuario = data.Tables[0].Rows[i]["Usuario"].ToString();
+                    objAux.UserStatus = data.Tables[0].Rows[i]["UserStatus"].ToString();
+                    objAux.Cargo = data.Tables[0].Rows[i]["Cargo"].ToString();
                     retorno.Add(objAux);
                     objAux = null;
                 }

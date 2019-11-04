@@ -14,7 +14,7 @@ namespace ProjetoPLPCSharp.Layers.Controllers
 
         public DocenteController()
         {
-            this.objRepo = new RepoDocente("SQLite");
+            this.objRepo = new RepoDocente("SQLServer");
         }
 
         public void InserirDocente(DocModel p_obj)
@@ -61,11 +61,11 @@ namespace ProjetoPLPCSharp.Layers.Controllers
                 throw ex;
             }
         }
-        public List<DocModel> ConsultarTodos(DocModel p_obj)
+        public List<DocModel> ConsultarTodos()
         {
             try
             {
-                return objRepo.selectAll(p_obj);
+                return objRepo.selectAll();
             }
             catch (Exception ex)
             {

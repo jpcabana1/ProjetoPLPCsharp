@@ -11,14 +11,12 @@ namespace ProjetoPLPCSharp.Layers.Repos
 {
     class RepoAtiv : IAtividade
     {
-
        private IBanco objDados;
        private string Comando;
         public RepoAtiv(string tipoDados)
         {
             this.objDados = new FacBanco().CriarBanco(tipoDados);
-        }
-            
+        }      
         public void insert(AtivModel p_obj)
         {
             try
@@ -114,12 +112,29 @@ namespace ProjetoPLPCSharp.Layers.Repos
                 retorno = new List<AtivModel>();
                 Comando = "Select top 100 * From tbAtividade";
                 retorno = MontaRetorno(objDados.ExecutaSelect(Comando));
+                return retorno;
             }
             catch (Exception ex)
             {
                 throw ex;
             }
-            return null;
+           
+        }
+        public List<AtivModel> SelectByID(int ID)
+        {
+            List<AtivModel> retorno;
+            try
+            {
+                retorno = new List<AtivModel>();
+                Comando = "Select  * From tbAtividade where CodProf = " + ID;
+                retorno = MontaRetorno(objDados.ExecutaSelect(Comando));
+                return retorno;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
         }
         public void Update(AtivModel p_obj)
         {
@@ -138,7 +153,21 @@ namespace ProjetoPLPCSharp.Layers.Repos
                 throw ex;
             }
         }
-
+        public void UpdateStatus(string status, int id)
+        {
+            try
+            {
+                Comando = "update tbAtividade " +
+                    "set " +
+                    "Status = '" + status + "' " +
+                    "where CodAtiv = " + id;
+                objDados.ExecutaComando(Comando);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
         List<AtivModel> MontaRetorno(DataSet data)
         {
             List<AtivModel> retorno;
@@ -165,7 +194,6 @@ namespace ProjetoPLPCSharp.Layers.Repos
                 throw ex;
             }
         }
-
        public void testeSQLite(string Comand)
         {
             IBanco SQLiteBanco;
@@ -184,7 +212,6 @@ namespace ProjetoPLPCSharp.Layers.Repos
                 throw;
             }
         }
-
         List<AtivModel> MontaRetornoSQLite(DataSet data)
         {
             List<AtivModel> retorno;
