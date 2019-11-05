@@ -9,6 +9,7 @@ namespace ProjetoPLPCSharp.Models
 {
     class CargoModel
     {
+        public int ID { get; set; }
         public string Cargo { get; set; }
         public int Pontuacao { get; set; }
         public int Tempo { get; set; }

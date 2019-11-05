@@ -13,12 +13,10 @@ namespace ProjetoPLPCSharp.Layers.Repos
     {
         private IBanco objDados;
         private string Comando;
-
         public RepoCargo(string tipoDados)
         {
             this.objDados = new FacBanco().CriarBanco(tipoDados);
         }
-
         public List<CargoModel> Select(string cargo)
         {
             List<CargoModel> Retorno;
@@ -33,7 +31,6 @@ namespace ProjetoPLPCSharp.Layers.Repos
                 throw ex;
             }
         }
-
         public List<CargoModel> SelectAll()
         {
             List<CargoModel> Retorno;
@@ -48,7 +45,6 @@ namespace ProjetoPLPCSharp.Layers.Repos
                 throw ex;
             }
         }
-
         public void Update(CargoModel cargoModel)
         {
             try
@@ -62,7 +58,6 @@ namespace ProjetoPLPCSharp.Layers.Repos
                 throw ex;
             }
         }
-
         List<CargoModel> MontaRetorno(DataSet data)
         {
             List<CargoModel> retorno;
@@ -74,6 +69,7 @@ namespace ProjetoPLPCSharp.Layers.Repos
                 for (int i = 0; i < data.Tables[0].Rows.Count; i++)
                 {
                     objAux = new CargoModel();
+                    objAux.ID = Convert.ToInt32(data.Tables[0].Rows[i]["id"]);
                     objAux.Vagas = Convert.ToInt32(data.Tables[0].Rows[i]["Vagas"]);                  
                     objAux.Pontuacao = Convert.ToInt32(data.Tables[0].Rows[i]["Pontuacao"]);                 
                     objAux.Tempo = Convert.ToInt32(data.Tables[0].Rows[i]["Tempo"]);
@@ -88,6 +84,5 @@ namespace ProjetoPLPCSharp.Layers.Repos
                 throw ex;
             }
         }
-
     }
 }

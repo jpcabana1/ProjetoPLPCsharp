@@ -89,6 +89,7 @@ namespace ProjetoPLPCSharp.Layers.Views
                 MessageBox.Show(ex.Message, "Erro!");
             }
         }
+
         #endregion
 
         #region Métodos
@@ -128,36 +129,45 @@ namespace ProjetoPLPCSharp.Layers.Views
         }
         private void Promover()
         {
+
             DocModel ObjDoc;
             CargoModel ObjCargo;
-            int Cont;
+            int ContagemPontosDocente;
+            bool tempoValido;
+
             foreach (DataGridViewRow item in grdDoc.Rows)
             {
                 if (item.Selected)
                 {
                     ObjDoc = ListaDoc.Find(e => e.Id == Convert.ToInt32(item.Cells[0].Value));
                     ObjCargo = ListaCargo.Find(e => e.Cargo == ObjDoc.Cargo);
-                    Cont = ContaPontos(ObjDoc.Id);
-
-                    if(ObjDoc.Cargo == "Professor Assistente IV" && Cont >= ObjCargo.Pontuacao && ObjCargo.Vagas > 0 && ObjDoc.TempoXP >= 4)
+                    ContagemPontosDocente = ContaPontos(ObjDoc.Id);//Consulta pontuação total do docente
+                    tempoValido = ValidaTempo(ObjCargo.ID, ObjDoc.TempoXP);
+                    if (ObjCargo.Pontuacao >= ContagemPontosDocente && ObjCargo.Vagas > 0 && tempoValido)
                     {
-                        ObjCargo.Vagas = ObjCargo.Vagas - 1;
-
+                        if (ObjCargo.ID < 9 )
+                        {
+                            ObjCargo.ID = ObjCargo.Vagas + 1;//Cargo do docente
+                            CtrlCargo.AtualizarCargo(ObjCargo);
+                            ObjCargo = ListaCargo.Find(e => e.ID == ObjCargo.ID + 1);
+                            ObjCargo.ID = ObjCargo.Vagas - 1;//Novo Cargo
+                            CtrlCargo.AtualizarCargo(ObjCargo);
+                            ObjDoc.TempoXP = 0;
+                            ObjDoc.Titulo = ObjCargo.Cargo;
+                            CtrlDocente.AtualizarDocente(ObjDoc);
+                        }
+                        else
+                        {
+                            MessageBox.Show("Professor titular não precisa ser promovido!","Promoção desnecessária!");
+                        }   
                     }
-                    else if (ObjDoc.Cargo == "Professor Adjunto IV" && Cont >= ObjCargo.Pontuacao && ObjCargo.Vagas > 0 && ObjDoc.TempoXP >= 4)
+                    else
                     {
-                        ObjCargo.Vagas = ObjCargo.Vagas - 1;
-
-                    }
-                    else if(Cont >= ObjCargo.Pontuacao && ObjCargo.Vagas > 0 && ObjDoc.TempoXP >= 3)
-                    {
-                        ObjCargo.Vagas = ObjCargo.Vagas - 1;
-
+                        MessageBox.Show("Usuário: "+ObjDoc.Nome+"\nNão cumpre requisitos para ser promovido","Erro!");
                     }
                 }
-
-
             }
+
         }
 
 
@@ -172,6 +182,14 @@ namespace ProjetoPLPCSharp.Layers.Views
             }
             return contagem;
         }
+
+        private bool ValidaTempo(int idCargo, int tempo)
+        {
+            CargoModel cargoModel;
+            cargoModel = ListaCargo.Find(e => e.ID == idCargo + 1) ;
+            return cargoModel.Tempo == tempo;
+        }
+       
         #endregion
 
         

@@ -16,7 +16,6 @@ namespace ProjetoPLPCSharp.Layers.Controllers
         {
             this.objRepo = new RepoAtiv("SQLServer");
         }
-
         public void InserirAtividade(AtivModel p_obj)
         {
             try
@@ -39,7 +38,6 @@ namespace ProjetoPLPCSharp.Layers.Controllers
                 throw ex;
             }
         }
-
         public void AtualizarStatus(string Status, int ID)
         {
             try
@@ -51,7 +49,6 @@ namespace ProjetoPLPCSharp.Layers.Controllers
                 throw ex;
             }
         }
-
         public void RemoverAtividade(AtivModel p_obj)
         {
             try
@@ -74,8 +71,6 @@ namespace ProjetoPLPCSharp.Layers.Controllers
                 throw ex;
             }
         }
-
-
         public List<AtivModel> ConsultarAtividadePorID(int codProf)
         {
             try
@@ -87,8 +82,6 @@ namespace ProjetoPLPCSharp.Layers.Controllers
                 throw ex;
             }
         }
-
-
         public List<AtivModel> ConsultarTodos(AtivModel p_obj)
         {
             try
@@ -100,7 +93,6 @@ namespace ProjetoPLPCSharp.Layers.Controllers
                 throw ex;
             }
         }
-
         public void teste()
         {
             objRepo.testeSQLite("Select * from tbTeste");
