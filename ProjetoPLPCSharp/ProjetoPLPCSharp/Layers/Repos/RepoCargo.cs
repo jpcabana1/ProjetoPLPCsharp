@@ -51,7 +51,8 @@ namespace ProjetoPLPCSharp.Layers.Repos
             {
                 Comando = "Update tbCargo set ";
                 Comando = Comando + " Vagas = " + cargoModel.Vagas;
-                Comando = Comando + "Where Cargo = " + cargoModel.Cargo;
+                Comando = Comando + " Where Cargo = '" + cargoModel.Cargo + "'";
+                objDados.ExecutaComando(Comando);
             }
             catch (Exception ex)
             {

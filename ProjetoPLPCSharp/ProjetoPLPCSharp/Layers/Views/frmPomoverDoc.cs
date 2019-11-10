@@ -123,7 +123,7 @@ namespace ProjetoPLPCSharp.Layers.Views
             {
                 if (item.UserStatus == "DOC")
                 {
-                    grdDoc.Rows.Add(item.Id, item.Nome, item.Titulo, item.TempoXP);
+                    grdDoc.Rows.Add(item.Id, item.Nome, item.Cargo, item.TempoXP);
                 }
             }
         }
@@ -142,19 +142,22 @@ namespace ProjetoPLPCSharp.Layers.Views
                     ObjDoc = ListaDoc.Find(e => e.Id == Convert.ToInt32(item.Cells[0].Value));
                     ObjCargo = ListaCargo.Find(e => e.Cargo == ObjDoc.Cargo);
                     ContagemPontosDocente = ContaPontos(ObjDoc.Id);//Consulta pontuação total do docente
-                    tempoValido = ValidaTempo(ObjCargo.ID, ObjDoc.TempoXP);
-                    if (ObjCargo.Pontuacao >= ContagemPontosDocente && ObjCargo.Vagas > 0 && tempoValido)
+                    tempoValido = ValidaTempo(ObjCargo.ID, ObjDoc.TempoXP);//Se o tempo do docente estiver de acordo tempoValido = true
+                    if (ContagemPontosDocente >= ObjCargo.Pontuacao && ObjCargo.Vagas > 0 && tempoValido)
                     {
+                        //ID: 9 = Professor Titular(Cargo Máximo)
                         if (ObjCargo.ID < 9 )
                         {
-                            ObjCargo.ID = ObjCargo.Vagas + 1;//Cargo do docente
+                    
+                            ObjCargo.Vagas = ObjCargo.Vagas + 1;//Libera vaga do cargo atual
                             CtrlCargo.AtualizarCargo(ObjCargo);
                             ObjCargo = ListaCargo.Find(e => e.ID == ObjCargo.ID + 1);
-                            ObjCargo.ID = ObjCargo.Vagas - 1;//Novo Cargo
+                            ObjCargo.Vagas = ObjCargo.Vagas - 1;//Ocupa uma vaga do cargo cargo novo
                             CtrlCargo.AtualizarCargo(ObjCargo);
                             ObjDoc.TempoXP = 0;
-                            ObjDoc.Titulo = ObjCargo.Cargo;
+                            ObjDoc.Cargo = ObjCargo.Cargo;
                             CtrlDocente.AtualizarDocente(ObjDoc);
+                            MessageBox.Show("Professor promovido!", "Promoção Concluída!");
                         }
                         else
                         {
@@ -168,8 +171,9 @@ namespace ProjetoPLPCSharp.Layers.Views
                 }
             }
 
-        }
+            MontaGrid();
 
+        }
 
         private int ContaPontos(int id)
         {
@@ -187,7 +191,7 @@ namespace ProjetoPLPCSharp.Layers.Views
         {
             CargoModel cargoModel;
             cargoModel = ListaCargo.Find(e => e.ID == idCargo + 1) ;
-            return cargoModel.Tempo == tempo;
+            return tempo >= cargoModel.Tempo;
         }
        
         #endregion

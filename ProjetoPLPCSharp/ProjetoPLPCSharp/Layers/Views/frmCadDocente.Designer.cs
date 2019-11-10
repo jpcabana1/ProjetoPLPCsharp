@@ -163,6 +163,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmCadDocente";
             this.Load += new System.EventHandler(this.frmCadDocente_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.frmCadDocente_KeyDown);
             this.ResumeLayout(false);
             this.PerformLayout();
 

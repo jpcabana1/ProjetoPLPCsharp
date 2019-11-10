@@ -99,8 +99,11 @@
 --select top 5 * from tbDocente
 --select top 5 * from tbAtividade
 
-
-
+select * from tbDocente
+--select * from tbAtividade where CodProf = 1
 select * from tbCargo
 
+
+
+--update tbDocente set TempoXP = 3 where id = 3
 

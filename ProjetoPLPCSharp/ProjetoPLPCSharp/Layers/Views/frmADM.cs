@@ -106,6 +106,7 @@ namespace ProjetoPLPCSharp.Layers.Views
             frmPomoverDoc frmPomoverDoc = new frmPomoverDoc();
             frmPomoverDoc.ShowDialog();
             frmPomoverDoc = null;
+            MontaGrid();
             Visible = true;
         }
         private void CadastrarDocente()
@@ -125,7 +126,7 @@ namespace ProjetoPLPCSharp.Layers.Views
                 {
                     if (item.UserStatus == "DOC")
                     {
-                        grdDoc.Rows.Add(item.Id, item.Nome, item.Titulo, item.TempoXP, item.Cargo);
+                        grdDoc.Rows.Add(item.Id, item.Nome, item.Cargo, item.TempoXP, item.Titulo);
                     }
                     
                 }
