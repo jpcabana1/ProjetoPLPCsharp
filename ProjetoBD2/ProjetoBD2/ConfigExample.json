@@ -1,0 +1,6 @@
+{
+  "DataSource": "server",
+  "InitialCatalog": "banco",
+  "User": "usuario",
+  "Password": "senha"
+}
